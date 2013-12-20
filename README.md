@@ -1,7 +1,7 @@
 Android ARchive skeleton
 ========
 
-Creating maven repository on [GitHub Pages](http://pages.github.com/) for any android library project
+Build any android library project with android gradle for usage with android gradle build system. Publish artifacts on [GitHub Pages](http://pages.github.com/).
 
 How to use
 ========
