@@ -30,3 +30,7 @@ proguard/
 
 # Max OS
 .DS_Store
+
+# Gradle
+.gradle/
+build/
