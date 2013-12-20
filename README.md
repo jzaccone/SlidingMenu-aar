@@ -1,6 +1,13 @@
 aar-quickstart
 ==============
 
+Maven repository on [GitHub Pages](http://pages.github.com/)
+
+How to use
+========
+
+[SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/)
+
 Create A Repo
 --------
 
@@ -51,6 +58,8 @@ Compile
 $ ./gradlew clean build
 ```
 
+When build is finished aar file will be located in `build/libs`.
+
 Edit build-gh-pages.sh
 --------
 
@@ -65,7 +74,7 @@ ARTIFACT_ID=library
 VERSION="1.3"
 ```
 
-See groupId artifactId and version in pom.xml
+> See `groupId` `artifactId` and `version` in `pom.xml`
 
 Push your commit
 --------
@@ -81,18 +90,18 @@ Creating Project Pages
 --------
 
 ```bash
-cd ..
-rm -rf SlidingMenu-aar
-git clone https://github.com/minakov/SlidingMenu-aar.git
-cd SlidingMenu-aar
-git checkout --orphan gh-pages
-git rm -rf .
-echo "" > index.html
-git add index.html
-git commit -a -m "First pages commit"
-git push origin gh-pages
-cd ..
-rm -rf SlidingMenu-aar
+$ cd ..
+$ rm -rf SlidingMenu-aar
+$ git clone https://github.com/minakov/SlidingMenu-aar.git
+$ cd SlidingMenu-aar
+$ git checkout --orphan gh-pages
+$ git rm -rf .
+$ echo "" > index.html
+$ git add index.html
+$ git commit -a -m "First pages commit"
+$ git push origin gh-pages
+$ cd ..
+$ rm -rf SlidingMenu-aar
 ```
 
 Build pages
