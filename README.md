@@ -6,7 +6,7 @@ Creating maven repository on [GitHub Pages](http://pages.github.com/) for any an
 How to use
 ========
 
-For example we used [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/) library
+For example we use [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/) library
 
 Create a github repo
 --------
