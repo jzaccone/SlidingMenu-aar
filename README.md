@@ -68,8 +68,8 @@ Edit build-gh-pages.sh and README.md
 REPO_URL=https://github.com/minakov/SlidingMenu-aar.git
 REPO_DIR=SlidingMenu-aar
 PAGES_DIR=SlidingMenu-aar-pages
-
 BUILD_FILE=build/libs/SlidingMenu-aar.aar
+
 GROUP_ID=com.jeremyfeinstein.slidingmenu
 ARTIFACT_ID=library
 VERSION="1.3"
