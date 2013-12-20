@@ -22,6 +22,7 @@ $ wget --no-check-certificate https://codeload.github.com/minakov/aar-quickstart
 $ unzip aar-quickstart.zip
 $ rm aar-quickstart.zip
 $ mv aar-quickstart-master SlidingMenu-aar
+$ cd SlidingMenu-aar
 $ chmod +x build-gh-pages.sh
 $ mv SCELETON.md README.md
 ```
@@ -104,7 +105,7 @@ $ cd ..
 $ rm -rf SlidingMenu-aar
 ```
 
-Build pages
+Build maven repository 
 --------
 
 ```bash
