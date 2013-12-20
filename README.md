@@ -1,18 +1,18 @@
-aar-quickstart
+Android ARchive skeleton
 ==============
 
-Maven repository on [GitHub Pages](http://pages.github.com/)
+Creating maven repository on [GitHub Pages](http://pages.github.com/) for any android library project
 
 How to use
 ========
 
-[SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/)
+For example we used [SlidingMenu](https://github.com/jfeinstein10/SlidingMenu/) library
 
-Create A Repo
+Create a github repo
 --------
 
-Repository name: SlidingMenu-aar
-Description: SlidingMenu library built with gradle in aar format for usage with android gradle build system
+* Repository name: SlidingMenu-aar
+* Description: SlidingMenu library built with gradle in aar format for usage with android gradle build system
 
 Download sceleton
 --------
@@ -60,7 +60,7 @@ $ ./gradlew clean build
 
 When build is finished aar file will be located in `build/libs`.
 
-Edit build-gh-pages.sh
+Edit build-gh-pages.sh and README.md
 --------
 
 ```bash
