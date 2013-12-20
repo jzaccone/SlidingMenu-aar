@@ -1,5 +1,5 @@
 Android ARchive skeleton
-==============
+========
 
 Creating maven repository on [GitHub Pages](http://pages.github.com/) for any android library project
 
@@ -115,3 +115,27 @@ $ build-gh-pages.sh
 $ cd ..
 $ rm -rf SlidingMenu-aar
 ```
+
+Credits
+========
+
+* https://github.com/mente/facebook-api-android-aar
+* https://github.com/square/spoon
+* http://blog.kaltepoth.de/posts/2010/09/06/github-maven-repositories.html
+
+License
+========
+
+    Copyright 2013 Vladimir Minakov
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
