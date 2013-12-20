@@ -6,6 +6,27 @@
 How to use
 ========
 
+Remote repository
+--------
+
+Maven repository on [GitHub Pages](http://pages.github.com/)
+
+```groovy
+...
+
+repositories {
+    maven { url "{GITHUB_URL}" }
+    ...
+}
+
+dependencies {
+    compile '{GROUP_ID}:{ARTIFACT_ID}:{VERSION}@aar'
+    ...
+}
+```
+
+> In your `build.gradle` include `maven{ url "{GITHUB_URL}" }` as repository priorior to `mavenCentral()`
+
 Local repository
 --------
 
@@ -46,24 +67,3 @@ dependencies {
     ...
 }
 ```
-
-Remote repository
---------
-
-Maven repository on [GitHub Pages](http://pages.github.com/)
-
-```groovy
-...
-
-repositories {
-    maven { url "{GITHUB_URL}" }
-    ...
-}
-
-dependencies {
-    compile '{GROUP_ID}:{ARTIFACT_ID}:{VERSION}@aar'
-    ...
-}
-```
-
-> In your `build.gradle` include `maven{ url "{GITHUB_URL}" }` as repository priorior to `mavenCentral()`
