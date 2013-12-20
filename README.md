@@ -31,7 +31,7 @@ $ git submodule add https://github.com/jfeinstein10/SlidingMenu.git
 Edit build.gradle
 --------
 
-```
+```groovy
 android {
     ...
     sourceSets {
