@@ -81,13 +81,12 @@ Push your commit
 --------
 
 ```bash
-$ git add .
-$ git commit -m "init commit"
+$ git commit -a -m "init commit"
 $ git remote add origin https://github.com/minakov/SlidingMenu-aar.git
 $ git push origin master
 ```
 
-Creating Project Pages
+Creating github project pages
 --------
 
 ```bash
@@ -98,7 +97,6 @@ $ cd SlidingMenu-aar
 $ git checkout --orphan gh-pages
 $ git rm -rf .
 $ echo "" > index.html
-$ git add index.html
 $ git commit -a -m "First pages commit"
 $ git push origin gh-pages
 $ cd ..
@@ -114,4 +112,6 @@ $ cd SlidingMenu-aar
 $ git submodule update --init
 $ ./gradlew clean build
 $ build-gh-pages.sh
+$ cd ..
+$ rm -rf SlidingMenu-aar
 ```
