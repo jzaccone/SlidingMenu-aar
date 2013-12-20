@@ -90,10 +90,6 @@ Creating github project pages
 --------
 
 ```bash
-$ cd ..
-$ rm -rf SlidingMenu-aar
-$ git clone https://github.com/minakov/SlidingMenu-aar.git
-$ cd SlidingMenu-aar
 $ git checkout --orphan gh-pages
 $ git rm -rf .
 $ echo "" > index.html
