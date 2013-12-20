@@ -77,9 +77,31 @@ $ git remote add origin https://github.com/minakov/SlidingMenu-aar.git
 $ git push origin master
 ```
 
+Creating Project Pages
+--------
+
+```bash
+cd ..
+rm -rf SlidingMenu-aar
+git clone https://github.com/minakov/SlidingMenu-aar.git
+cd SlidingMenu-aar
+git checkout --orphan gh-pages
+git rm -rf .
+echo "" > index.html
+git add index.html
+git commit -a -m "First pages commit"
+git push origin gh-pages
+cd ..
+rm -rf SlidingMenu-aar
+```
+
 Build pages
 --------
 
 ```bash
+$ git clone https://github.com/minakov/SlidingMenu-aar.git
+$ cd SlidingMenu-aar
+$ git submodule update --init
+$ ./gradlew clean build
 $ build-gh-pages.sh
 ```
