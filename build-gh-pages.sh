@@ -35,8 +35,7 @@ for DIR in $(find ./ \( -o -name build -o -name .git -o -name .gitignore \) -pru
 done
 
 # Stage all files in git and create a commit
-git add .
-git add -u
+git add --all .
 git commit -m "Website at $(date)"
 
 # Push the new files up to GitHub
