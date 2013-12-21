@@ -7,10 +7,11 @@ buildscript {
     }
 }
 apply plugin: 'android-library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    buildToolsVersion '19.0.0'
 
     sourceSets {
         main {
@@ -28,27 +29,15 @@ group = ''
 version = ''
 def artifactId = ''
 
-android.libraryVariants.all { variant ->
-    def name = variant.buildType.name
-
-    // Only attach a jar for non-debug build types.
-    if (!name.equals(com.android.builder.BuilderConstants.DEBUG)) {
-        def task = project.tasks.create "jar${name.capitalize()}", Jar
-        task.dependsOn variant.javaCompile
-        task.from variant.javaCompile.destinationDir
-        artifacts.add('archives', task);
-    }
-}
-
 afterEvaluate { project ->
-	uploadArchives {
-	    repositories {
-	        mavenDeployer {
-	            repository(url: "file://$buildDir/repo/")
-	            pom.artifactId = $artifactId
-	        }
-	    }
-	}
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: "file://$buildDir/repo/")
+                pom.artifactId = artifactId
+            }
+        }
+    }
 
     task androidJavadocs(type: Javadoc) {
         source = android.sourceSets.main.allJava
