@@ -27,7 +27,6 @@ Cloning library
 
 ```bash
 $ cd SlidingMenu-aar
-$ git init
 $ git submodule add https://github.com/jfeinstein10/SlidingMenu.git
 ```
 
