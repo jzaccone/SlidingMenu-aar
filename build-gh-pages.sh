@@ -1,37 +1,37 @@
 #!/bin/bash
 
-REPO_URL=
-REPO_DIR=
-PAGES_DIR=
-BUILD_FILE=
-
-GROUP_ID=
-ARTIFACT_ID=
-VERSION=
+HOME_DIR=$PWD
+DIR=$(basename $PWD)-pages
+URL=$(git config --get remote.origin.url)
 
 # Delete any existing temporary website clone
 cd ..
-rm -rf $PAGES_DIR
+rm -rf $DIR
 
 # Checkout and track the gh-pages branch
-git clone -b gh-pages --single-branch $REPO_URL $PAGES_DIR
+git clone $URL $DIR
 
 # Delete everything
-cd $PAGES_DIR
+cd $DIR
+PAGES_DIR=$PWD
+
+git checkout --orphan gh-pages
+rm -rf .gitignore
+rm -rf .gitmodules
 rm -rf *
 
-# Copy artifacts
-cd ../$REPO_DIR
-mvn install:install-file -Dfile=$BUILD_FILE -DgroupId=$GROUP_ID -DartifactId=$ARTIFACT_ID -Dversion=$VERSION -Dpackaging=aar -DlocalRepositoryPath=../$PAGES_DIR
+# Build artifacts
+cd $HOME_DIR
+./gradlew -Dorg.gradle.project.repoUrl="$PAGES_DIR" uploadArchives
 
 # Create pretty directory listing
-cd ../$PAGES_DIR
-for f in $(find ./ \( -o -name build -o -name .git -o -name .gradle \) -prune -o -type d); do
+cd $PAGES_DIR
+for DIR in $(find ./ \( -o -name build -o -name .git -o -name .gitignore \) -prune -o -type d); do
   (
     echo "<html><body><h1>Directory listing</h1><hr/><pre>"
-    ls -1p "${f}" | grep -v "^\./$" | grep -v "index.html" | awk '{ printf "<a href=\"%s\">%s</a>\n",$1,$1 }' 
+    ls -1p "${DIR}" | grep -v "^\./$" | grep -v "index.html" | awk '{ printf "<a href=\"%s\">%s</a>\n",$1,$1 }' 
     echo "</pre></body></html>"
-  ) > "${f}/index.html"
+  ) > "${DIR}/index.html"
 done
 
 # Stage all files in git and create a commit
@@ -44,4 +44,4 @@ git push origin gh-pages
 
 # Delete our temp folder
 cd ..
-rm -rf $PAGES_DIR
+rm -rf $DIR
