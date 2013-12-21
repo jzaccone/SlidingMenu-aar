@@ -19,13 +19,13 @@ Download sceleton
 
 ```bash
 $ wget --no-check-certificate -O - https://raw.github.com/minakov/aar-quickstart/master/clone.sh | bash
+$ mv aar-quickstart SlidingMenu-aar
 ```
 
 Cloning library
 --------
 
 ```bash
-$ mv aar-quickstart SlidingMenu-aar
 $ cd SlidingMenu-aar
 $ git init
 $ git submodule add https://github.com/jfeinstein10/SlidingMenu.git
@@ -113,6 +113,7 @@ Credits
 * https://github.com/mente/facebook-api-android-aar
 * https://github.com/square/spoon
 * http://blog.kaltepoth.de/posts/2010/09/06/github-maven-repositories.html
+* http://jedicoder.blogspot.com/2011/11/automated-gradle-project-deployment-to.html
 
 License
 ========
