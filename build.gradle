@@ -29,11 +29,18 @@ group = ''
 version = ''
 def artifactId = ''
 
+def repositoryUrl
+if (has('repoDir')) {
+    repositoryUrl = "file://$repoDir"
+} else {
+    repositoryUrl = "file://$buildDir/repo/"
+}
+
 afterEvaluate { project ->
     uploadArchives {
         repositories {
             mavenDeployer {
-                repository(url: "file://$buildDir/repo/")
+                repository(url: repositoryUrl)
                 pom.artifactId = artifactId
             }
         }
