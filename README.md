@@ -18,19 +18,14 @@ Download sceleton
 --------
 
 ```bash
-$ wget --no-check-certificate https://codeload.github.com/minakov/aar-quickstart/zip/master -O aar-quickstart.zip
-$ unzip aar-quickstart.zip
-$ rm aar-quickstart.zip
-$ mv aar-quickstart-master SlidingMenu-aar
-$ cd SlidingMenu-aar
-$ chmod +x build-gh-pages.sh
-$ mv SCELETON.md README.md
+$ wget --no-check-certificate -O - https://raw.github.com/minakov/aar-quickstart/master/clone.sh | bash
 ```
 
 Cloning library
 --------
 
 ```bash
+$ mv aar-quickstart SlidingMenu-aar
 $ cd SlidingMenu-aar
 $ git init
 $ git submodule add https://github.com/jfeinstein10/SlidingMenu.git
