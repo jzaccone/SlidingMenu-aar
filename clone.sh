@@ -6,3 +6,4 @@ cd aar-quickstart
 chmod +x build-gh-pages.sh
 mv SCELETON.md README.md
 rm clone.sh
+git init
