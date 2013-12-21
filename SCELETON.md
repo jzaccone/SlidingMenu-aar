@@ -44,7 +44,7 @@ When build is finished aar file will be located in `build/libs`.
 Maven artifact
 
 ```bash
-  $ ./gradlew -Dorg.gradle.project.repoUrl="${HOME}/.m2/repository" uploadArchives
+  $ ./gradlew -Dorg.gradle.project.repoDir="${HOME}/.m2/repository" uploadArchives
 ```
 
 `build.gradle` example
