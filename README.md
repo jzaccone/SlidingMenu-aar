@@ -54,6 +54,8 @@ version = '1.3'
 def artifactId = 'library'
 ```
 
+> See `groupId` `artifactId` and `version` in `pom.xml`
+
 Edit README.md
 --------
 
@@ -82,7 +84,7 @@ Build maven repository
 $ git clone https://github.com/minakov/SlidingMenu-aar.git
 $ cd SlidingMenu-aar
 $ git submodule update --init
-$ build-gh-pages.sh
+$ ./build-gh-pages.sh
 $ cd ..
 $ rm -rf SlidingMenu-aar
 ```
