@@ -60,7 +60,7 @@ Edit README.md
 --------
 
 * {LIBRARY_NAME} SlidingMenu
-* {GITHUB_URL} https://github.com/minakov/SlidingMenu-aar.git
+* {GITHUB_URL} http://minakov.github.io/SlidingMenu-aar
 * {ARTIFACT_ID} com.jeremyfeinstein.slidingmenu:library:1.3@aar
 
 > See `groupId` `artifactId` and `version` in `pom.xml`
