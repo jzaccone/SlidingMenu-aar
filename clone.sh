@@ -5,3 +5,4 @@ mv aar-quickstart-master aar-quickstart
 cd aar-quickstart
 chmod +x build-gh-pages.sh
 mv SCELETON.md README.md
+rm clone.sh
