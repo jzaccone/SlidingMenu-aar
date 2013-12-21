@@ -6,12 +6,11 @@ buildscript {
         classpath 'com.android.tools.build:gradle:0.7.1'
     }
 }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.9'
-}
-
 apply plugin: 'android-library'
+
+group = 'com.mopub.mobileads'
+version = "1.0.0"
+def artifactId = 'mopub-sdk'
 
 android {
     compileSdkVersion 19
@@ -27,4 +26,48 @@ android {
 }
 
 dependencies {
+}
+
+android.libraryVariants.all { variant ->
+    def name = variant.buildType.name
+
+    // Only attach a jar for non-debug build types.
+    if (!name.equals(com.android.builder.BuilderConstants.DEBUG)) {
+        def task = project.tasks.create "jar${name.capitalize()}", Jar
+        task.dependsOn variant.javaCompile
+        task.from variant.javaCompile.destinationDir
+        artifacts.add('archives', task);
+    }
+}
+
+afterEvaluate { project ->
+	uploadArchives {
+	    repositories {
+	        mavenDeployer {
+	            repository(url: "file://$buildDir/repo/")
+	            pom.artifactId = $artifactId
+	        }
+	    }
+	}
+
+    task androidJavadocs(type: Javadoc) {
+        source = android.sourceSets.main.allJava
+    }
+    task androidJavadocsJar(type: Jar) {
+        classifier = 'javadoc'
+        from androidJavadocs.destinationDir
+    }
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.allSource
+    }
+
+    artifacts {
+        archives androidSourcesJar
+        archives androidJavadocsJar
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.9'
 }
