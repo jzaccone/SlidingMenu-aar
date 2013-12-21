@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    compile '{GROUP_ID}:{ARTIFACT_ID}:{VERSION}@aar'
+    compile '{ARTIFACT_ID}'
     ...
 }
 ```
@@ -44,12 +44,7 @@ When build is finished aar file will be located in `build/libs`.
 Maven artifact
 
 ```bash
-  $ mvn install:install-file \
-  -Dfile=build/libs/{FILE}.aar \
-  -DgroupId={GROUP_ID} \
-  -DartifactId={ARTIFACT_ID} \
-  -Dversion="{VERSION}" \
-  -Dpackaging=aar
+  $ ./gradlew -Dorg.gradle.project.repoUrl="${HOME}/.m2/repository" uploadArchives
 ```
 
 `build.gradle` example
@@ -63,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    compile '{GROUP_ID}:{ARTIFACT_ID}:{VERSION}@aar'
+    compile '{ARTIFACT_ID}'
     ...
 }
 ```
