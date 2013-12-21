@@ -22,11 +22,11 @@ rm -rf *
 
 # Build artifacts
 cd $HOME_DIR
-./gradlew -Dorg.gradle.project.repoUrl="$PAGES_DIR" uploadArchives
+./gradlew -Dorg.gradle.project.repoDir="$PAGES_DIR" uploadArchives
 
 # Create pretty directory listing
 cd $PAGES_DIR
-for DIR in $(find ./ \( -o -name build -o -name .git -o -name .gitignore \) -prune -o -type d); do
+for DIR in $(find ./ \( -name build -o -name .git -o -name .gitignore \) -prune -o -type d); do
   (
     echo "<html><body><h1>Directory listing</h1><hr/><pre>"
     ls -1p "${DIR}" | grep -v "^\./$" | grep -v "index.html" | awk '{ printf "<a href=\"%s\">%s</a>\n",$1,$1 }' 
