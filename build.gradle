@@ -15,19 +15,20 @@ android {
 
     sourceSets {
         main {
-            manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            res.srcDirs = ['res']
+            manifest.srcFile 'SlidingMenu/library/AndroidManifest.xml'
+            java.srcDirs = ['SlidingMenu/library/src']
+            res.srcDirs = ['SlidingMenu/library/res']
         }
     }
 }
 
 dependencies {
+    compile 'com.android.support:support-v4:+'
 }
 
-group = ''
-version = ''
-def artifactId = ''
+group = 'com.jeremyfeinstein.slidingmenu'
+version = '1.3'
+def artifactId = 'library'
 
 def repositoryUrl
 if (has('repoDir')) {
