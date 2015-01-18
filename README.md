@@ -25,7 +25,7 @@ dependencies {
 }
 ```
 
-> In your `build.gradle` include `maven{ url "http://jzaccone.github.io/SlidingMenu-aar" }` as repository priorior to `mavenCentral()`
+> In your `build.gradle` include `maven{ url "http://jzaccone.github.io/SlidingMenu-aar" }` as repository prior to `mavenCentral()`
 
 Local repository
 --------
